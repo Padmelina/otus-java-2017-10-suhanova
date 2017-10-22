@@ -21,62 +21,34 @@
             <version>3.5</version>
         </dependency>
     </dependencies>
-
     <build>
         <finalName>${project.name}</finalName>
+
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>padmelina.homework.hwfirst.Main</mainClass>
-                        </manifest>
-                    </archive>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                </configuration>
                 <executions>
                     <execution>
-                        <id>make-assembly</id>
+                        <id>my-maven-assembly-plugin</id>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.github.wvengen</groupId>
-                <artifactId>proguard-maven-plugin</artifactId>
-                <version>2.0.14</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals><goal>proguard</goal></goals>
-                    </execution>
-                </executions>
                 <configuration>
-                    <maxMemory>1024m</maxMemory>
-
-
-                    <proguardInclude>${basedir}/proguard.conf</proguardInclude>
-                    <exclusions>
-                        <exclusion>
-                            <groupId>ru.otus</groupId>
-                            <artifactId>homework1</artifactId>
-                        </exclusion>
-
-                    </exclusions>
-                    <libs>
-                        <lib>${java.home}/lib/rt.jar</lib>
-                        <lib>${java.home}/lib/jce.jar</lib>
-                        <lib>${java.home}/lib/ext/sunjce_provider.jar</lib>
-                    </libs>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>padmelina.homework.hwfirst.Main</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
+            
         </plugins>
     </build>
-
 </project>

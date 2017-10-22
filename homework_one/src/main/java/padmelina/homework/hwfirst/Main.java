@@ -14,8 +14,8 @@ public class Main {
         RealMatrix n = new Array2DRowRealMatrix(matrixData2);
 
         RealMatrix p = m.multiply(n);
-        System.out.println(p.getRowDimension());    // 2
-        System.out.println(p.getColumnDimension()); // 2
+        System.out.println(p.getRowDimension());
+        System.out.println(p.getColumnDimension());
 
         RealMatrix pInverse = new LUDecomposition(p).getSolver().getInverse();
     }
