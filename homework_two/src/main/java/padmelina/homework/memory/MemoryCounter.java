@@ -1,6 +1,6 @@
-package memory;
+package padmelina.homework.memory;
 
-import model.MemoryAllocater;
+import padmelina.homework.model.MemoryAllocater;
 
 public class MemoryCounter {
     public static long countObjectSize(int size, Class type) {

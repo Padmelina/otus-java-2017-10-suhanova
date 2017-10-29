@@ -1,4 +1,4 @@
-package memory;
+package padmelina.homework.memory;
 
 public class MemoryUtils {
     private Runtime runtime;

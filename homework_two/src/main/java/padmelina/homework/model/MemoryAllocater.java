@@ -1,4 +1,4 @@
-package model;
+package padmelina.homework.model;
 
 public class MemoryAllocater {
 
