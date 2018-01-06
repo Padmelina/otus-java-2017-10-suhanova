@@ -270,8 +270,14 @@ public class MyArrayList<T> implements List<T> {
     }
 
     @Override
-    public void sort(Comparator<? super T> c) {
-
+    public void sort(Comparator<? super T> comparator) {
+        for (int i = 0; i < size-1; ++i) {
+            for (int j = i; j < size; ++j) {
+                if (comparator.compare((T) array[i], (T) array[j]) > 0) {
+                    Collections.swap(this,  i,  j);
+                }
+            }
+        }
     }
 
     private class Itrtr implements Iterator<T> {
