@@ -97,7 +97,7 @@ public class MyArrayList<T> implements List<T> {
     public boolean addAll(Collection c) {
         if (c.isEmpty()) throw new NullPointerException();
         Iterator iterator = c.iterator();
-        while (iterator.hasNext()) {
+        for (int i = 0; i < c.size(); i++) {
             add(iterator.next());
         }
         return true;
@@ -107,7 +107,7 @@ public class MyArrayList<T> implements List<T> {
         if (c.isEmpty()) throw new NullPointerException();
         if (index > size() || index < 0) throw new IndexOutOfBoundsException();
         Iterator iterator = c.iterator();
-        while (iterator.hasNext()) {
+        for (int i = 0; i < c.size(); i++) {
             add(index, iterator.next());
         }
         return true;
@@ -285,6 +285,7 @@ public class MyArrayList<T> implements List<T> {
         Itrtr(int index) {
             pointer = index;
         }
+
         public boolean hasNext() {
             return pointer + 1 < size;
         }
