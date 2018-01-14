@@ -15,7 +15,6 @@ public class MyArrayList<T> implements List<T> {
         if (size < 0) throw new  IllegalArgumentException();
         else if (size == 0)  array = new Object[DEFAULT_SIZE];
         array = new Object[size];
-        this.size = size;
         realSize = size;
     }
 
@@ -47,7 +46,7 @@ public class MyArrayList<T> implements List<T> {
     }
 
     public Object[] toArray() {
-        return array;
+        return Arrays.copyOf(array, size);
     }
 
     public boolean add(Object element) {
